@@ -1,4 +1,6 @@
-function params() {
+<script>
+    
+    function params() {
     function urldecode(str) {
         return decodeURIComponent((str+'').replace(/\+/g, '%20'));
     }
@@ -24,3 +26,4 @@ divf.innerHTML ='<iframe height="480" src="https://drive.google.com/file/d/'+id[
 else
 divf.innerHTML='Home';
 }
+</script>
