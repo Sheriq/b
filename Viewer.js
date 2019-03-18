@@ -1,4 +1,4 @@
-var params = function() {
+function params() {
     function urldecode(str) {
         return decodeURIComponent((str+'').replace(/\+/g, '%20'));
     }
@@ -14,11 +14,12 @@ var params = function() {
     }
 
     var prmstr = window.location.search.substr(1);
-    return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
-}();
+    return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : 0;
+}
 
-var id = parms;
-var divf=document.getElementById('frame');
-
-divf.innerHTML =
-'<iframe height="480" src="https://drive.google.com/file/d/'+id+'/preview" width="640"></iframe>';
+var id = params();
+var divf=document.getElementById('divf');
+if(id && id["id"] !=0)
+divf.innerHTML ='<iframe height="480" src="https://drive.google.com/file/d/'+id["id"]+'/preview" width="640"></iframe>';
+else
+divf.innerHTML='Home';
